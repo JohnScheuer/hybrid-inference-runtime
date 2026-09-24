@@ -1,0 +1,12 @@
+{
+  "device": "Huawei Ascend 910B2 (64GB HBM2e)",
+  "architecture": "DaVinci V300 / CANN 8.6",
+  "workload": "RadixTree Prefix Caching TTFT Scaling (4096-Token Prompt)",
+  "runs": [
+    { "cache_hit_ratio": 0.0, "cached_tokens": 0, "computed_tokens": 4096, "ttft_ms": 196.47, "speedup_factor": 1.0, "hbm_recomputation_saved_gb": 0.0 },
+    { "cache_hit_ratio": 0.25, "cached_tokens": 1024, "computed_tokens": 3072, "ttft_ms": 147.55, "speedup_factor": 1.33, "hbm_recomputation_saved_gb": 2.0 },
+    { "cache_hit_ratio": 0.5, "cached_tokens": 2048, "computed_tokens": 2048, "ttft_ms": 98.45, "speedup_factor": 2.0, "hbm_recomputation_saved_gb": 4.0 },
+    { "cache_hit_ratio": 0.75, "cached_tokens": 3072, "computed_tokens": 1024, "ttft_ms": 50.2, "speedup_factor": 3.91, "hbm_recomputation_saved_gb": 6.0 },
+    { "cache_hit_ratio": 0.9, "cached_tokens": 3686, "computed_tokens": 410, "ttft_ms": 20.65, "speedup_factor": 9.52, "hbm_recomputation_saved_gb": 7.2 }
+  ]
+}

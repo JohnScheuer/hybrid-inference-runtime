@@ -1,0 +1,9 @@
+{
+  "device": "Huawei Ascend 910B2 (64GB HBM2e)",
+  "architecture": "DaVinci V300 / CANN 8.6",
+  "finding": "PyTorch Eager Concat introduces HBM roundtrip overhead vs True On-Chip UB Fusion",
+  "unfused_latency_ms": 1.594,
+  "eager_fused_concat_latency_ms": 1.877,
+  "regression_pct": 17.75,
+  "architectural_recommendation": "Implement fused SwiGLU via Ascend C kernel targeting Unified Buffer directly"
+}
