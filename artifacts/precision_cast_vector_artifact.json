@@ -1,0 +1,12 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "Vector Pipe Numerical Precision Casting Throughput",
+  "benchmarks": [
+    { "operation": "FP32 -> FP16 (L0C Quant)", "num_elements": 67108864, "latency_ms": 0.333, "throughput_gelem_per_sec": 201.65, "effective_bandwidth_gbs": 1126.79 },
+    { "operation": "FP16 -> FP32 (Dequant)", "num_elements": 67108864, "latency_ms": 0.318, "throughput_gelem_per_sec": 210.82, "effective_bandwidth_gbs": 1178.07 },
+    { "operation": "FP16 -> INT8 (W8A8 Prep)", "num_elements": 67108864, "latency_ms": 0.187, "throughput_gelem_per_sec": 358.73, "effective_bandwidth_gbs": 1002.28 },
+    { "operation": "INT8 -> FP16 (Dequant)", "num_elements": 67108864, "latency_ms": 0.131, "throughput_gelem_per_sec": 512.47, "effective_bandwidth_gbs": 1431.83 },
+    { "operation": "FP16 -> BF16 (Format Cast)", "num_elements": 67108864, "latency_ms": 0.212, "throughput_gelem_per_sec": 316.60, "effective_bandwidth_gbs": 1179.41 }
+  ]
+}

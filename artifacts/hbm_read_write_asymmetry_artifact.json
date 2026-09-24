@@ -1,0 +1,12 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "HBM2e Read/Write/Residual Bandwidth Asymmetry",
+  "read_write_ratio": 0.90,
+  "benchmarks": [
+    { "pattern": "Pure Read (Sum)", "traffic_gb": 1.0, "latency_ms": 0.810, "bandwidth_gbs": 1234.15 },
+    { "pattern": "Pure Write (Fill)", "traffic_gb": 1.0, "latency_ms": 0.725, "bandwidth_gbs": 1378.62 },
+    { "pattern": "Copy (Read+Write)", "traffic_gb": 2.0, "latency_ms": 1.683, "bandwidth_gbs": 1188.58 },
+    { "pattern": "Residual Add (2R+1W)", "traffic_gb": 3.0, "latency_ms": 2.767, "bandwidth_gbs": 1084.23 }
+  ]
+}
