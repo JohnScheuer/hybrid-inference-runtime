@@ -1,0 +1,13 @@
+{
+  "device": "Ascend910B2",
+  "layers": 32,
+  "hidden_dim": 4096,
+  "runs": [
+    { "batch_size": 1, "step_ms": 0.712, "tpot_ms": 0.712, "throughput_tok_s": 1405.3 },
+    { "batch_size": 2, "step_ms": 0.72, "tpot_ms": 0.72, "throughput_tok_s": 2777.8 },
+    { "batch_size": 4, "step_ms": 0.716, "tpot_ms": 0.716, "throughput_tok_s": 5584.0 },
+    { "batch_size": 8, "step_ms": 0.709, "tpot_ms": 0.709, "throughput_tok_s": 11279.0 },
+    { "batch_size": 16, "step_ms": 0.677, "tpot_ms": 0.677, "throughput_tok_s": 23629.6 },
+    { "batch_size": 32, "step_ms": 0.686, "tpot_ms": 0.686, "throughput_tok_s": 46660.6 }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "device": "Ascend910B2",
+  "peak_hbm_gbs": 1189.25,
+  "runs": [
+    { "size_gb": 0.5, "bandwidth_gbs": 1178.57 },
+    { "size_gb": 1.0, "bandwidth_gbs": 1182.46 },
+    { "size_gb": 2.0, "bandwidth_gbs": 1187.61 },
+    { "size_gb": 4.0, "bandwidth_gbs": 1189.25 },
+    { "size_gb": 8.0, "bandwidth_gbs": 1188.28 }
+  ]
+}

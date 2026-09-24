@@ -1,0 +1,13 @@
+{
+  "device": "Ascend910B2",
+  "batch_size": 4,
+  "hidden_dim": 4096,
+  "runs": [
+    { "num_layers": 4, "step_ms": 0.093, "per_layer_ms": 0.0232, "throughput_tok_s": 43055.9 },
+    { "num_layers": 8, "step_ms": 0.172, "per_layer_ms": 0.0215, "throughput_tok_s": 23264.7 },
+    { "num_layers": 16, "step_ms": 0.357, "per_layer_ms": 0.0223, "throughput_tok_s": 11213.3 },
+    { "num_layers": 32, "step_ms": 0.697, "per_layer_ms": 0.0218, "throughput_tok_s": 5740.0 },
+    { "num_layers": 48, "step_ms": 1.045, "per_layer_ms": 0.0218, "throughput_tok_s": 3828.9 },
+    { "num_layers": 64, "step_ms": 1.385, "per_layer_ms": 0.0216, "throughput_tok_s": 2887.4 }
+  ]
+}
