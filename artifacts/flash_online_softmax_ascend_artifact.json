@@ -1,0 +1,14 @@
+{
+  "device": "Huawei Ascend 910B2 (64GB HBM2e)",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "Tiled FlashAttention Online Softmax (Zero OOM at 64k Tokens)",
+  "tile_config": { "block_m": 128, "block_n": 128 },
+  "benchmarks": [
+    { "sequence_length": 1024, "standard_attention_vram_mb": 64.0, "tiled_flash_attention_vram_mb": 1.2, "tiled_execution_ms": 48.58, "attained_tflops": 0.35, "status": "SUCCESS" },
+    { "sequence_length": 4096, "standard_attention_vram_mb": 1024.0, "tiled_flash_attention_vram_mb": 2.0, "tiled_execution_ms": 751.20, "attained_tflops": 0.37, "status": "SUCCESS" },
+    { "sequence_length": 8192, "standard_attention_vram_mb": 4096.0, "tiled_flash_attention_vram_mb": 3.0, "tiled_execution_ms": 2996.77, "attained_tflops": 0.37, "status": "SUCCESS" },
+    { "sequence_length": 16384, "standard_attention_vram_mb": 16384.0, "tiled_flash_attention_vram_mb": 5.0, "tiled_execution_ms": 19961.48, "attained_tflops": 0.22, "status": "SUCCESS" },
+    { "sequence_length": 32768, "standard_attention_vram_mb": 65536.0, "tiled_flash_attention_vram_mb": 9.0, "tiled_execution_ms": 92718.51, "attained_tflops": 0.19, "status": "SUCCESS_ZERO_OOM" },
+    { "sequence_length": 65536, "standard_attention_vram_mb": 262144.0, "tiled_flash_attention_vram_mb": 17.0, "tiled_execution_ms": 364434.93, "attained_tflops": 0.19, "status": "SUCCESS_ZERO_OOM" }
+  ]
+}

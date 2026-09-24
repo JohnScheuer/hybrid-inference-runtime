@@ -1,0 +1,10 @@
+{
+  "device": "Huawei Ascend 910B2 (64GB HBM2e)",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "PagedAttention Host-to-Device KV Swapping vs NPU Recompute Crossover",
+  "benchmarks": [
+    { "num_blocks": 64, "total_tokens": 1024, "swap_size_mb": 512.0, "swap_out_latency_ms": 27.92, "swap_in_latency_ms": 24.11, "recompute_latency_ms": 17.14, "optimal_strategy": "RECOMPUTE WINS (1.4x Faster)" },
+    { "num_blocks": 256, "total_tokens": 4096, "swap_size_mb": 2048.0, "swap_out_latency_ms": 112.13, "swap_in_latency_ms": 95.89, "recompute_latency_ms": 49.59, "optimal_strategy": "RECOMPUTE WINS (1.9x Faster)" },
+    { "num_blocks": 1024, "total_tokens": 16384, "swap_size_mb": 8192.0, "swap_out_latency_ms": 446.50, "swap_in_latency_ms": 383.90, "recompute_latency_ms": 194.02, "optimal_strategy": "RECOMPUTE WINS (2.0x Faster)" }
+  ]
+}
