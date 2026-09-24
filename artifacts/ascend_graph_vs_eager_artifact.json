@@ -1,0 +1,13 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "Ascend Graph Mode vs Eager Launch Dispatch Overhead",
+  "layers": 32,
+  "benchmarks": [
+    { "batch_size": 1, "eager_step_latency_ms": 1.155, "graph_step_latency_ms": 1.155, "cpu_dispatch_overhead_saved_ms": 0.0, "speedup_factor": 1.0 },
+    { "batch_size": 2, "eager_step_latency_ms": 1.15, "graph_step_latency_ms": 1.151, "cpu_dispatch_overhead_saved_ms": 0.0, "speedup_factor": 1.0 },
+    { "batch_size": 4, "eager_step_latency_ms": 1.151, "graph_step_latency_ms": 1.151, "cpu_dispatch_overhead_saved_ms": 0.0, "speedup_factor": 1.0 },
+    { "batch_size": 8, "eager_step_latency_ms": 1.157, "graph_step_latency_ms": 1.156, "cpu_dispatch_overhead_saved_ms": 0.001, "speedup_factor": 1.0 },
+    { "batch_size": 16, "eager_step_latency_ms": 1.165, "graph_step_latency_ms": 1.165, "cpu_dispatch_overhead_saved_ms": 0.0, "speedup_factor": 1.0 }
+  ]
+}

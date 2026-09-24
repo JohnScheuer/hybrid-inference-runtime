@@ -1,0 +1,13 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "DeepSeek-V3 Multi-Token Prediction (MTP) Heads Evaluation",
+  "vocab_size": 128256,
+  "base_layers": 32,
+  "benchmarks": [
+    { "mtp_heads_k": 1, "base_32_layer_step_ms": 3.248, "mtp_marginal_overhead_ms": 0.0, "total_mtp_step_latency_ms": 3.248, "effective_tokens_per_step": 1, "theoretical_throughput_gain": 1.0 },
+    { "mtp_heads_k": 2, "base_32_layer_step_ms": 3.248, "mtp_marginal_overhead_ms": 2.659, "total_mtp_step_latency_ms": 5.907, "effective_tokens_per_step": 2, "theoretical_throughput_gain": 1.1 },
+    { "mtp_heads_k": 3, "base_32_layer_step_ms": 3.248, "mtp_marginal_overhead_ms": 5.306, "total_mtp_step_latency_ms": 8.554, "effective_tokens_per_step": 3, "theoretical_throughput_gain": 1.14 },
+    { "mtp_heads_k": 4, "base_32_layer_step_ms": 3.248, "mtp_marginal_overhead_ms": 7.976, "total_mtp_step_latency_ms": 11.224, "effective_tokens_per_step": 4, "theoretical_throughput_gain": 1.16 }
+  ]
+}
