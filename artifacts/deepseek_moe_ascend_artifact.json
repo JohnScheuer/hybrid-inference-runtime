@@ -1,0 +1,13 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "DeepSeekMoE Fine-Grained Routing & Dispatch Scalability",
+  "num_tokens_processed": 2048,
+  "benchmarks": [
+    { "num_experts": 8, "top_k": 2, "gating_latency_ms": 0.224, "dispatch_scatter_ms": 0.426, "expert_gemms_ms": 1.687, "total_moe_latency_ms": 2.337 },
+    { "num_experts": 16, "top_k": 4, "gating_latency_ms": 0.129, "dispatch_scatter_ms": 0.073, "expert_gemms_ms": 0.875, "total_moe_latency_ms": 1.077 },
+    { "num_experts": 32, "top_k": 6, "gating_latency_ms": 0.124, "dispatch_scatter_ms": 0.069, "expert_gemms_ms": 0.663, "total_moe_latency_ms": 0.857 },
+    { "num_experts": 64, "top_k": 8, "gating_latency_ms": 0.098, "dispatch_scatter_ms": 0.07, "expert_gemms_ms": 0.655, "total_moe_latency_ms": 0.822 },
+    { "num_experts": 128, "top_k": 8, "gating_latency_ms": 0.095, "dispatch_scatter_ms": 0.073, "expert_gemms_ms": 0.649, "total_moe_latency_ms": 0.818 }
+  ]
+}

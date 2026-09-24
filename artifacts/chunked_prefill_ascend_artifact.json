@@ -1,0 +1,11 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "Chunked Prefill vs Monolithic Serving Jitter Bounding",
+  "benchmarks": [
+    { "prompt_length": 2048, "monolithic_prefill_ms": 47.7, "chunk_budget_tokens": 512, "chunk_step_latency_ms": 19.86, "decode_starvation_prevention_factor": 2.4 },
+    { "prompt_length": 4096, "monolithic_prefill_ms": 97.96, "chunk_budget_tokens": 512, "chunk_step_latency_ms": 12.18, "decode_starvention_prevention_factor": 8.0 },
+    { "prompt_length": 8192, "monolithic_prefill_ms": 196.59, "chunk_budget_tokens": 512, "chunk_step_latency_ms": 12.28, "decode_starvation_prevention_factor": 16.0 },
+    { "prompt_length": 16384, "monolithic_prefill_ms": 394.32, "chunk_budget_tokens": 512, "chunk_step_latency_ms": 12.27, "decode_starvation_prevention_factor": 32.1 }
+  ]
+}
