@@ -1,0 +1,15 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "CANN Driver Runtime Overhead Decomposition",
+  "kernel_launch_us": 20.25,
+  "sync_overhead_us": 23.20,
+  "alloc_overhead_us": 7.30,
+  "h2d_copy_16bytes_us": 33.36,
+  "gemm_4k_reference_us": 435.33,
+  "nvidia_comparison": {
+    "cuda_launch_us": 5.0,
+    "cann_launch_us": 20.25,
+    "overhead_gap_ratio": "4.0x higher CPU dispatch on CANN"
+  }
+}

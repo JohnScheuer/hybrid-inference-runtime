@@ -1,0 +1,26 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "theoretical_peak_tflops": 380.0,
+  "measured_hbm_gbs": 1189.25,
+  "ridge_point": 319.53,
+  "max_attained_tflops": 317.16,
+  "hardware_efficiency_pct": 83.5,
+  "h100_comparison": {
+    "h100_peak_tflops": 989.4,
+    "h100_hbm3_gbs": 3352.0,
+    "ascend_vs_h100_compute_pct": 38.4,
+    "ascend_vs_h100_bandwidth_pct": 35.5
+  },
+  "benchmarks": [
+    { "workload": "Decode GEMV (b=1)", "intensity": 1.0, "attained_tflops": 1.28, "pct_of_peak": 0.3, "bound": "MEMORY-BOUND" },
+    { "workload": "Decode GEMV (b=4)", "intensity": 4.0, "attained_tflops": 5.92, "pct_of_peak": 1.6, "bound": "MEMORY-BOUND" },
+    { "workload": "Decode GEMV (b=16)", "intensity": 15.9, "attained_tflops": 23.15, "pct_of_peak": 6.1, "bound": "MEMORY-BOUND" },
+    { "workload": "Small GEMM (64x4k)", "intensity": 62.1, "attained_tflops": 90.96, "pct_of_peak": 23.9, "bound": "MEMORY-BOUND" },
+    { "workload": "Medium GEMM (256x4k)", "intensity": 227.6, "attained_tflops": 184.76, "pct_of_peak": 48.6, "bound": "MEMORY-BOUND" },
+    { "workload": "Prefill GEMM (1k x 4k)", "intensity": 682.7, "attained_tflops": 269.15, "pct_of_peak": 70.8, "bound": "COMPUTE-BOUND" },
+    { "workload": "Large GEMM (2k x 4k)", "intensity": 1024.0, "attained_tflops": 309.51, "pct_of_peak": 81.5, "bound": "COMPUTE-BOUND" },
+    { "workload": "Massive GEMM (4k x 4k)", "intensity": 1365.3, "attained_tflops": 316.81, "pct_of_peak": 83.4, "bound": "COMPUTE-BOUND" },
+    { "workload": "Square 4k x 4k", "intensity": 1365.3, "attained_tflops": 317.16, "pct_of_peak": 83.5, "bound": "COMPUTE-BOUND (Peak)" }
+  ]
+}
