@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "topology": {
+    "node_0": "Local NVIDIA GeForce RTX 5060 (Blackwell CC 12.0)",
+    "node_1": "Remote Huawei Ascend 910B (CANN 8.0)",
+    "protocol": "Disaggregated Prefill-Decode with Async Memory Bridge"
+  },
+  "metrics": [
+    {
+      "request_id": "req-f1fc3a4f",
+      "batch_size": 4,
+      "prompt_tokens": 512,
+      "generated_tokens": 16,
+      "node0_prefill_device": "NVIDIA GeForce RTX 5060",
+      "node1_decode_device": "Huawei Ascend 910B (CANN 8.0 / DaVinci Architecture)",
+      "ttft_ms": 1184.608486999423,
+      "tpot_ms": 2.923927562562767,
+      "kv_sync_latency_ms": 3.6191630006214837,
+      "e2e_latency_ms": 1235.0104910010486,
+      "sla_status": "HEALTHY (P99 < 15ms)"
+    },
+    {
+      "request_id": "req-aa0d09a3",
+      "batch_size": 4,
+      "prompt_tokens": 512,
+      "generated_tokens": 16,
+      "node0_prefill_device": "NVIDIA GeForce RTX 5060",
+      "node1_decode_device": "Huawei Ascend 910B (CANN 8.0 / DaVinci Architecture)",
+      "ttft_ms": 12.686250999649928,
+      "tpot_ms": 2.944268437431674,
+      "kv_sync_latency_ms": 3.7026179998065345,
+      "e2e_latency_ms": 63.49716399836325,
+      "sla_status": "HEALTHY (P99 < 15ms)"
+    },
+    {
+      "request_id": "req-33309fdd",
+      "batch_size": 4,
+      "prompt_tokens": 512,
+      "generated_tokens": 16,
+      "node0_prefill_device": "NVIDIA GeForce RTX 5060",
+      "node1_decode_device": "Huawei Ascend 910B (CANN 8.0 / DaVinci Architecture)",
+      "ttft_ms": 7.291683999937959,
+      "tpot_ms": 2.9321213124831047,
+      "kv_sync_latency_ms": 3.6272229999667616,
+      "e2e_latency_ms": 57.832847999634396,
+      "sla_status": "HEALTHY (P99 < 15ms)"
+    },
+    {
+      "request_id": "req-55171764",
+      "batch_size": 4,
+      "prompt_tokens": 512,
+      "generated_tokens": 16,
+      "node0_prefill_device": "NVIDIA GeForce RTX 5060",
+      "node1_decode_device": "Huawei Ascend 910B (CANN 8.0 / DaVinci Architecture)",
+      "ttft_ms": 10.62335400001757,
+      "tpot_ms": 2.9337120625427815,
+      "kv_sync_latency_ms": 3.603486999963934,
+      "e2e_latency_ms": 61.16623400066601,
+      "sla_status": "HEALTHY (P99 < 15ms)"
+    },
+    {
+      "request_id": "req-5e7960fb",
+      "batch_size": 4,
+      "prompt_tokens": 512,
+      "generated_tokens": 16,
+      "node0_prefill_device": "NVIDIA GeForce RTX 5060",
+      "node1_decode_device": "Huawei Ascend 910B (CANN 8.0 / DaVinci Architecture)",
+      "ttft_ms": 17.024872000547475,
+      "tpot_ms": 2.936823812547118,
+      "kv_sync_latency_ms": 3.5975700002381927,
+      "e2e_latency_ms": 67.61162300153956,
+      "sla_status": "HEALTHY (P99 < 15ms)"
+    }
+  ]
+}

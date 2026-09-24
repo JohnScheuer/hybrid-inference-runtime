@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "topology": {
+    "node_0": "Local NVIDIA GeForce RTX 5060 (Blackwell CC 12.0)",
+    "node_1": "Remote Huawei Ascend 910B (CANN 8.0)",
+    "protocol": "Disaggregated Prefill-Decode with Async Memory Bridge"
+  },
+  "metrics": [
+    {
+      "request_id": "req-43903def",
+      "batch_size": 4,
+      "prompt_tokens": 512,
+      "generated_tokens": 16,
+      "node0_prefill_device": "NVIDIA GeForce RTX 5060",
+      "node1_decode_device": "Huawei Ascend 910C (DaVinci V300) [3-Pipe Microarchitectural Model]",
+      "ttft_ms": 567.7759239988518,
+      "tpot_ms": 3.043999999999999,
+      "kv_sync_latency_ms": 0.12474000141082797,
+      "e2e_latency_ms": 616.6046640002626,
+      "sla_status": "HEALTHY (P99 < 15ms)"
+    },
+    {
+      "request_id": "req-86687a6d",
+      "batch_size": 4,
+      "prompt_tokens": 512,
+      "generated_tokens": 16,
+      "node0_prefill_device": "NVIDIA GeForce RTX 5060",
+      "node1_decode_device": "Huawei Ascend 910C (DaVinci V300) [3-Pipe Microarchitectural Model]",
+      "ttft_ms": 10.989306001647492,
+      "tpot_ms": 3.043999999999999,
+      "kv_sync_latency_ms": 0.2409190001344541,
+      "e2e_latency_ms": 59.93422500178193,
+      "sla_status": "HEALTHY (P99 < 15ms)"
+    },
+    {
+      "request_id": "req-b38efe4f",
+      "batch_size": 4,
+      "prompt_tokens": 512,
+      "generated_tokens": 16,
+      "node0_prefill_device": "NVIDIA GeForce RTX 5060",
+      "node1_decode_device": "Huawei Ascend 910C (DaVinci V300) [3-Pipe Microarchitectural Model]",
+      "ttft_ms": 9.83271400036756,
+      "tpot_ms": 3.043999999999999,
+      "kv_sync_latency_ms": 0.3979640005127294,
+      "e2e_latency_ms": 58.934678000880275,
+      "sla_status": "HEALTHY (P99 < 15ms)"
+    },
+    {
+      "request_id": "req-ab683af2",
+      "batch_size": 4,
+      "prompt_tokens": 512,
+      "generated_tokens": 16,
+      "node0_prefill_device": "NVIDIA GeForce RTX 5060",
+      "node1_decode_device": "Huawei Ascend 910C (DaVinci V300) [3-Pipe Microarchitectural Model]",
+      "ttft_ms": 8.088297001449973,
+      "tpot_ms": 3.043999999999999,
+      "kv_sync_latency_ms": 0.21666300017386675,
+      "e2e_latency_ms": 57.00896000162383,
+      "sla_status": "HEALTHY (P99 < 15ms)"
+    },
+    {
+      "request_id": "req-9466bcbc",
+      "batch_size": 4,
+      "prompt_tokens": 512,
+      "generated_tokens": 16,
+      "node0_prefill_device": "NVIDIA GeForce RTX 5060",
+      "node1_decode_device": "Huawei Ascend 910C (DaVinci V300) [3-Pipe Microarchitectural Model]",
+      "ttft_ms": 7.594333001179621,
+      "tpot_ms": 3.043999999999999,
+      "kv_sync_latency_ms": 3.177086000505369,
+      "e2e_latency_ms": 59.475419001684976,
+      "sla_status": "HEALTHY (P99 < 15ms)"
+    }
+  ]
+}
