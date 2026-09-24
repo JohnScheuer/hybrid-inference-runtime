@@ -1,10 +1,10 @@
 # Heterogeneous LLM Inference Runtime (NVIDIA Blackwell to Huawei Ascend CANN)
 
-[Validation: Physical Silicon Verified]
-[Node-0: NVIDIA RTX 5060 (Blackwell CC 12.0)]
-[Node-1: Huawei Ascend 910B2 (64GB HBM2e)]
-[Artifacts: 32 Empirical JSONs]
-[License: MIT]
+![Validation](https://img.shields.io/badge/Validation-Physical_Silicon_Verified-brightgreen)
+![Node-0](https://img.shields.io/badge/Node--0-NVIDIA_RTX_5060-76B900)
+![Node-1](https://img.shields.io/badge/Node--1-Huawei_Ascend_910B2-red)
+![Artifacts](https://img.shields.io/badge/Artifacts-32_Empirical_JSONs-blue)
+![License](https://img.shields.io/badge/License-MIT-purple)
 
 A high-performance, disaggregated Prefill-Decode (PD) inference runtime and microarchitectural characterization suite. The system partitions serving workloads across physical NVIDIA Blackwell (SM120) for compute-heavy prompt prefill GEMMs and physical Huawei Ascend 910B2 (CANN 8.6 / DaVinci V300) for memory-bound token decode pipelines.
 
