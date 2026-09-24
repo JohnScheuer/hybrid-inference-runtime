@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "timestamp": "2026-09-24T09:30:00Z",
+  "topology": {
+    "node_0": {
+      "type": "Physical Local Accelerator",
+      "device_name": "NVIDIA GeForce RTX 5060",
+      "architecture": "Blackwell (Compute Capability 12.0)",
+      "driver_version": "572.16 / CUDA 13.0",
+      "phase": "Prefill (Compute-Bound GEMM)",
+      "measured_ttft_ms": 7.59
+    },
+    "node_1": {
+      "type": "Physical Cloud NPU",
+      "device_name": "Huawei Ascend 910B2",
+      "architecture": "DaVinci V300 (CANN 8.6)",
+      "memory_capacity": "62420 MB HBM2e",
+      "driver_version": "npu-smi 25.2.1",
+      "phase": "Decode (Memory-Bound Token Generation)",
+      "measured_tpot_ms": 0.68,
+      "throughput_tokens_per_sec": 5899.3
+    }
+  },
+  "workload": "32-Layer Transformer (b=4, hidden_dim=4096)",
+  "status": "VALIDATED_ON_PHYSICAL_SILICON"
+}
