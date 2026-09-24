@@ -1,0 +1,13 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "context_length": 16384,
+  "study": "PagedAttention Block Size Sensitivity & Table Lookup Overhead",
+  "benchmarks": [
+    { "block_size": 8, "total_blocks_managed": 2048, "page_table_lookup_ms": 0.201, "kv_read_ms": 0.555, "total_paged_attn_step_ms": 0.756 },
+    { "block_size": 16, "total_blocks_managed": 1024, "page_table_lookup_ms": 0.199, "kv_read_ms": 0.553, "total_paged_attn_step_ms": 0.752 },
+    { "block_size": 32, "total_blocks_managed": 512, "page_table_lookup_ms": 0.221, "kv_read_ms": 0.56, "total_paged_attn_step_ms": 0.781 },
+    { "block_size": 64, "total_blocks_managed": 256, "page_table_lookup_ms": 0.358, "kv_read_ms": 0.549, "total_paged_attn_step_ms": 0.907 },
+    { "block_size": 128, "total_blocks_managed": 128, "page_table_lookup_ms": 0.635, "kv_read_ms": 0.552, "total_paged_attn_step_ms": 1.187 }
+  ]
+}

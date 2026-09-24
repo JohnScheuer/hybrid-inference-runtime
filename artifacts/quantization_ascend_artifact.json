@@ -1,0 +1,12 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "W8A8 Quantization vs FP16 Serving Acceleration",
+  "benchmarks": [
+    { "workload": "QKV Proj (4k)", "fp16_latency_ms": 0.023, "w8a8_effective_latency_ms": 0.011, "speedup_factor": 2.0, "hbm_saved_mb": 16.0 },
+    { "workload": "Attn Out (4k)", "fp16_latency_ms": 0.022, "w8a8_effective_latency_ms": 0.011, "speedup_factor": 2.0, "hbm_saved_mb": 16.0 },
+    { "workload": "MLP Gate/Up (11k)", "fp16_latency_ms": 0.037, "w8a8_effective_latency_ms": 0.018, "speedup_factor": 2.0, "hbm_saved_mb": 43.0 },
+    { "workload": "MLP Down (11k)", "fp16_latency_ms": 0.047, "w8a8_effective_latency_ms": 0.024, "speedup_factor": 2.0, "hbm_saved_mb": 43.0 },
+    { "workload": "Large GEMM (8k)", "fp16_latency_ms": 0.072, "w8a8_effective_latency_ms": 0.036, "speedup_factor": 2.0, "hbm_saved_mb": 64.0 }
+  ]
+}
