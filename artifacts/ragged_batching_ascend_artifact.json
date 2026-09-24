@@ -1,0 +1,13 @@
+{
+  "device": "Huawei Ascend 910B2 (64GB HBM2e)",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "Ragged/Packed Batching vs Padded Dense GEMM (Zero Padding)",
+  "layers": 32,
+  "hidden_dim": 4096,
+  "benchmarks": [
+    { "scenario": "Low Variance", "max_length": 512, "wasted_padding_pct": 4.7, "padded_latency_ms": 23.89, "packed_latency_ms": 24.58, "speedup_factor": 0.97 },
+    { "scenario": "Medium Variance", "max_length": 1024, "wasted_padding_pct": 53.1, "padded_latency_ms": 49.92, "packed_latency_ms": 23.14, "speedup_factor": 2.16 },
+    { "scenario": "High Variance", "max_length": 2048, "wasted_padding_pct": 66.4, "padded_latency_ms": 98.36, "packed_latency_ms": 33.81, "speedup_factor": 2.91 },
+    { "scenario": "Extreme Variance", "max_length": 4096, "wasted_padding_pct": 72.9, "padded_latency_ms": 197.25, "packed_latency_ms": 53.87, "speedup_factor": 3.66 }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "device": "Huawei Ascend 910B2 (64GB HBM2e)",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "Sliding Window Attention (W=2048) vs Full Attention OOM Prevention",
+  "window_size": 2048,
+  "benchmarks": [
+    { "context_length": 2048, "full_attention_vram_mb": 256.0, "swa_attention_vram_mb": 256.0, "full_attention_ms": 19.18, "swa_attention_ms": 0.25, "status": "OK" },
+    { "context_length": 4096, "full_attention_vram_mb": 1024.0, "swa_attention_vram_mb": 512.0, "full_attention_ms": 2.67, "swa_attention_ms": 0.51, "status": "OK" },
+    { "context_length": 8192, "full_attention_vram_mb": 4096.0, "swa_attention_vram_mb": 1024.0, "full_attention_ms": 11.0, "swa_attention_ms": 1.05, "status": "OK" },
+    { "context_length": 16384, "full_attention_vram_mb": 16384.0, "swa_attention_vram_mb": 2048.0, "full_attention_ms": 44.5, "swa_attention_ms": 2.0, "status": "OK" },
+    { "context_length": 32768, "full_attention_vram_mb": 65536.0, "swa_attention_vram_mb": 4096.0, "full_attention_ms": null, "swa_attention_ms": 4.52, "status": "FULL_OOM_PREVENTED_BY_SWA" },
+    { "context_length": 65536, "full_attention_vram_mb": 262144.0, "swa_attention_vram_mb": 8192.0, "full_attention_ms": null, "swa_attention_ms": 9.15, "status": "FULL_OOM_PREVENTED_BY_SWA" }
+  ]
+}
