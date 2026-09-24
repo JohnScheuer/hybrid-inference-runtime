@@ -1,0 +1,22 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "DaVinci 16x16x16 Fractal Tiling Hardware Penalty & Flat Latency Law",
+  "m_sweep": [
+    { "m_dimension": 1, "fractal_tiles_16": 1, "hardware_padding_efficiency_pct": 6.2, "latency_ms": 0.0248, "attained_tflops": 1.35 },
+    { "m_dimension": 2, "fractal_tiles_16": 1, "hardware_padding_efficiency_pct": 12.5, "latency_ms": 0.0227, "attained_tflops": 2.95 },
+    { "m_dimension": 4, "fractal_tiles_16": 1, "hardware_padding_efficiency_pct": 25.0, "latency_ms": 0.0227, "attained_tflops": 5.92 },
+    { "m_dimension": 8, "fractal_tiles_16": 1, "hardware_padding_efficiency_pct": 50.0, "latency_ms": 0.0232, "attained_tflops": 11.57 },
+    { "m_dimension": 15, "fractal_tiles_16": 1, "hardware_padding_efficiency_pct": 93.8, "latency_ms": 0.0226, "attained_tflops": 22.24 },
+    { "m_dimension": 16, "fractal_tiles_16": 1, "hardware_padding_efficiency_pct": 100.0, "latency_ms": 0.0244, "attained_tflops": 22.03 },
+    { "m_dimension": 17, "fractal_tiles_16": 2, "hardware_padding_efficiency_pct": 53.1, "latency_ms": 0.0237, "attained_tflops": 24.07 },
+    { "m_dimension": 31, "fractal_tiles_16": 2, "hardware_padding_efficiency_pct": 96.9, "latency_ms": 0.0252, "attained_tflops": 41.30 },
+    { "m_dimension": 32, "fractal_tiles_16": 2, "hardware_padding_efficiency_pct": 100.0, "latency_ms": 0.0242, "attained_tflops": 44.42 },
+    { "m_dimension": 33, "fractal_tiles_16": 3, "hardware_padding_efficiency_pct": 68.8, "latency_ms": 0.0237, "attained_tflops": 46.71 }
+  ],
+  "k_sweep": [
+    { "k_dim": 4095, "latency_ms": 0.0238, "attained_tflops": 22.53 },
+    { "k_dim": 4096, "latency_ms": 0.0241, "attained_tflops": 22.30 },
+    { "k_dim": 4097, "latency_ms": 0.0235, "attained_tflops": 22.82 }
+  ]
+}

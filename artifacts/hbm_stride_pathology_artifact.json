@@ -1,0 +1,16 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "HBM2e Memory Controller Stride Granularity & Access Penalty",
+  "benchmarks": [
+    { "stride_elements": 1, "stride_bytes": 2, "read_size_mb": 1024.0, "read_latency_ms": 1.686, "effective_bandwidth_gbs": 593.13, "bandwidth_degradation_pct": 0.0 },
+    { "stride_elements": 2, "stride_bytes": 4, "read_size_mb": 512.0, "read_latency_ms": 2.648, "effective_bandwidth_gbs": 188.83, "bandwidth_degradation_pct": 68.2 },
+    { "stride_elements": 4, "stride_bytes": 8, "read_size_mb": 256.0, "read_latency_ms": 1.667, "effective_bandwidth_gbs": 150.01, "bandwidth_degradation_pct": 74.7 },
+    { "stride_elements": 8, "stride_bytes": 16, "read_size_mb": 128.0, "read_latency_ms": 1.249, "effective_bandwidth_gbs": 100.08, "bandwidth_degradation_pct": 83.1 },
+    { "stride_elements": 16, "stride_bytes": 32, "read_size_mb": 64.0, "read_latency_ms": 1.006, "effective_bandwidth_gbs": 62.13, "bandwidth_degradation_pct": 89.5 },
+    { "stride_elements": 32, "stride_bytes": 64, "read_size_mb": 32.0, "read_latency_ms": 0.974, "effective_bandwidth_gbs": 32.08, "bandwidth_degradation_pct": 94.6 },
+    { "stride_elements": 64, "stride_bytes": 128, "read_size_mb": 16.0, "read_latency_ms": 1.091, "effective_bandwidth_gbs": 14.33, "bandwidth_degradation_pct": 97.6 },
+    { "stride_elements": 128, "stride_bytes": 256, "read_size_mb": 8.0, "read_latency_ms": 0.828, "effective_bandwidth_gbs": 9.43, "bandwidth_degradation_pct": 98.4 },
+    { "stride_elements": 256, "stride_bytes": 512, "read_size_mb": 4.0, "read_latency_ms": 0.732, "effective_bandwidth_gbs": 5.34, "bandwidth_degradation_pct": 99.1 }
+  ]
+}
