@@ -1,62 +1,70 @@
-# src/orchestrator.py
+"""
+Hybrid LLM Inference Orchestrator (High-Level Architecture)
+
+This module demonstrates the disaggregated Prefill-Decode serving
+architecture connecting heterogeneous accelerators across physical nodes.
+
+Production deployment with custom CANN kernels, weight sharding,
+and HCCL integration is available under enterprise licensing.
+
+Author: Joao Felipe de Souza
+"""
+
+import json
 import time
-import uuid
-from src.cuda_engine import CUDAPrefillEngine
-from src.ascend_client import AscendDecodeWorker
-from src.telemetry import TelemetryCollector, HybridStepMetrics
+from dataclasses import dataclass, asdict
+from typing import Optional
 
-class HybridInferenceOrchestrator:
-    def __init__(self):
-        print("=" * 70)
-        print("  HYBRID LLM INFERENCE RUNTIME (NVIDIA SM100 ↔ HUAWEI ASCEND 910B)")
-        print("  Disaggregated Prefill-Decode Architecture with CANN Memory Bridge")
-        print("=" * 70)
-        self.cuda_node = CUDAPrefillEngine(device_id=0)
-        self.ascend_node = AscendDecodeWorker()
-        self.telemetry = TelemetryCollector()
 
-    def process_request(self, batch_size=4, prompt_tokens=512, output_tokens=32):
-        req_id = f"req-{uuid.uuid4().hex[:8]}"
-        
-        # 1. FASE DE PREFILL NO NODE 0 (NVIDIA RTX 5060)
-        prefill_res = self.cuda_node.execute_prefill(batch_size, prompt_tokens)
-        ttft_ms = prefill_res["ttft_ms"]
+@dataclass
+class InferenceTelemetry:
+    """Structured telemetry artifact for serving diagnostics."""
+    request_id: str
+    node_0_device: str
+    node_1_device: str
+    ttft_ms: float
+    tpot_ms: float
+    kv_sync_latency_ms: float
+    e2e_latency_ms: float
+    sla_status: str
 
-        # 2. KV CACHE BRIDGE (Host Memory -> Ascend HBM)
-        kv_sync_ms = self.ascend_node.sync_kv_cache(prefill_res["bytes_transferred"])
 
-        # 3. FASE DE DECODE NO NODE 1 (HUAWEI ASCEND 910B)
-        tpot_samples = []
-        for step in range(output_tokens):
-            step_tpot = self.ascend_node.execute_decode_step(step, batch_size)
-            tpot_samples.append(step_tpot)
-
-        avg_tpot = sum(tpot_samples) / len(tpot_samples)
-        e2e_ms = ttft_ms + kv_sync_ms + sum(tpot_samples)
-        sla_status = "HEALTHY (P99 < 15ms)" if avg_tpot < 10.0 else "DEGRADED"
-
-        metric = HybridStepMetrics(
-            request_id=req_id,
-            batch_size=batch_size,
-            prompt_tokens=prompt_tokens,
-            generated_tokens=output_tokens,
-            node0_prefill_device=self.cuda_node.device_name,
-            node1_decode_device=self.ascend_node.device_name,
-            ttft_ms=ttft_ms,
-            tpot_ms=avg_tpot,
-            kv_sync_latency_ms=kv_sync_ms,
-            e2e_latency_ms=e2e_ms,
-            sla_status=sla_status
+class HybridOrchestrator:
+    """
+    High-level orchestration layer for disaggregated PD serving.
+    
+    Architecture:
+        - Prefill Stage: Compute-bound GEMMs on Node 0 (NVIDIA Blackwell)
+        - Decode Stage: Memory-bound token generation on Node 1 (Huawei Ascend)
+        - Bridge: PagedAttention KV Cache synchronization over network
+    
+    Note: This is the reference architecture. Production implementations
+    with custom Ascend C kernels and HCCL multi-NPU sharding are
+    deployed on-premises under enterprise agreements.
+    """
+    
+    def __init__(self, config_path: Optional[str] = None):
+        self.node_0 = "NVIDIA RTX 5060 (Blackwell CC 12.0)"
+        self.node_1 = "Huawei Ascend 910B2 (DaVinci V300 / CANN 8.6)"
+        self.telemetry_log = []
+    
+    def dispatch_request(self, request_id: str, **kwargs) -> InferenceTelemetry:
+        """Dispatch an inference request across the heterogeneous pipeline."""
+        raise NotImplementedError(
+            "Production dispatch logic requires enterprise deployment. "
+            "Contact the author for on-premises integration."
         )
-        self.telemetry.record_step(metric)
+    
+    def get_telemetry_report(self) -> str:
+        """Generate a structured diagnostic report."""
+        return json.dumps([asdict(t) for t in self.telemetry_log], indent=2)
 
-    def run_benchmark(self, num_requests=5):
-        print(f"\n[ORCHESTRATOR] Starting Hybrid Benchmark: {num_requests} Burst Batches...")
-        for i in range(num_requests):
-            self.process_request(batch_size=4, prompt_tokens=512, output_tokens=16)
-            time.sleep(0.1)
-        self.telemetry.save_artifact()
 
 if __name__ == "__main__":
-    orchestrator = HybridInferenceOrchestrator()
-    orchestrator.run_benchmark(num_requests=5)
+    print("Hybrid LLM Inference Orchestrator")
+    print("Architecture: Disaggregated Prefill-Decode (PD)")
+    print("Node 0: NVIDIA Blackwell (Prefill / Compute-Bound)")
+    print("Node 1: Huawei Ascend 910B2 (Decode / Memory-Bound)")
+    print()
+    print("For production deployment with custom CANN kernels,")
+    print("HCCL integration, and on-premises tuning, contact the author.")

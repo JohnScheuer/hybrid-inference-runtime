@@ -1,0 +1,25 @@
+# Kernels proprietarios Ascend C (NUNCA no GitHub publico)
+kernels/
+*.cub
+*.ascendc
+cann_kernels/
+
+# Codigo de producao com pesos reais
+production/
+weights/
+*.safetensors
+
+# Logs de diagnostico avancado (inteligencia proprietaria)
+diagnostics/
+advanced_telemetry/
+
+# Credenciais e configuracoes de deploy
+.env
+config/production/
+*.pem
+*.key
+
+# Cache e temporarios
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
