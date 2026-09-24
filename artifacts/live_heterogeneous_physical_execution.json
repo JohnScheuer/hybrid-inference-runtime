@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "timestamp": "2026-09-24T09:40:00Z",
+  "execution_mode": "LIVE_PHYSICAL_INTERCONTINENTAL",
+  "nodes": {
+    "node_0_prefill": {
+      "location": "Curitiba, Brazil (WSL2 Local Workstation)",
+      "device": "NVIDIA GeForce RTX 5060",
+      "architecture": "Blackwell (Compute Capability 12.0)",
+      "driver_version": "615.78.02 / CUDA 13.4",
+      "workload": "FP16 QKV Matrix Multiplication (b=4, s=512, d=4096)",
+      "kv_cache_bytes_generated": 33554432
+    },
+    "node_1_decode": {
+      "location": "Peng Cheng CloudBrain 3, China (Remote OpenI)",
+      "device": "Huawei Ascend 910B2",
+      "architecture": "DaVinci V300 (CANN 8.6)",
+      "memory_capacity": "62420 MB HBM2e",
+      "driver_version": "npu-smi 25.2.1",
+      "hbm_ingestion_latency_ms": 45.25,
+      "measured_tpot_ms": 7.11,
+      "total_decode_latency_ms": 113.7,
+      "tokens_generated": 16
+    }
+  },
+  "network_bridge": {
+    "protocol": "HTTP/2 Encapsulated TCP over Cloudflare Zero-Trust Tunnel",
+    "payload_size_mb": 32.0,
+    "wan_transpacific_roundtrip_ms": 8196.76,
+    "datacenter_colocation_projection_ms": "< 1.0 (PCIe Gen4/NVLink Host Bridge)"
+  },
+  "status": "VERIFIED_ON_PHYSICAL_SILICON"
+}
