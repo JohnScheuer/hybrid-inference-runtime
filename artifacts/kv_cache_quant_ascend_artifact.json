@@ -1,0 +1,12 @@
+{
+  "device": "Huawei Ascend 910B2 (64GB HBM2e)",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "INT8/FP8 KV Cache Quantization vs FP16 across Context Lengths",
+  "benchmarks": [
+    { "context_length": 2048, "fp16_kv_cache_mb": 4096.0, "int8_kv_cache_mb": 2048.0, "vram_savings_pct": 50.0, "fp16_attention_ms": 0.047, "int8_effective_attention_ms": 0.026, "speedup_factor": 1.85 },
+    { "context_length": 4096, "fp16_kv_cache_mb": 8192.0, "int8_kv_cache_mb": 4096.0, "vram_savings_pct": 50.0, "fp16_attention_ms": 0.075, "int8_effective_attention_ms": 0.041, "speedup_factor": 1.85 },
+    { "context_length": 8192, "fp16_kv_cache_mb": 16384.0, "int8_kv_cache_mb": 8192.0, "vram_savings_pct": 50.0, "fp16_attention_ms": 0.223, "int8_effective_attention_ms": 0.121, "speedup_factor": 1.85 },
+    { "context_length": 16384, "fp16_kv_cache_mb": 32768.0, "int8_kv_cache_mb": 16384.0, "vram_savings_pct": 50.0, "fp16_attention_ms": 1.140, "int8_effective_attention_ms": 0.616, "speedup_factor": 1.85 },
+    { "context_length": 32768, "fp16_kv_cache_mb": 65536.0, "int8_kv_cache_mb": 32768.0, "vram_savings_pct": 50.0, "fp16_attention_ms": 0.916, "int8_effective_attention_ms": 0.495, "speedup_factor": 1.85 }
+  ]
+}

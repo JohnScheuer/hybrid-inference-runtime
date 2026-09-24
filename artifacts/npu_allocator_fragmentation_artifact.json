@@ -1,0 +1,13 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "NPU Caching Allocator Pool Fragmentation & Churn Profile",
+  "hbm_capacity_mb": 62420.0,
+  "max_allocated_before_oom_mb": 59310.0,
+  "utilization_efficiency_pct": 97.3,
+  "checkpoints": [
+    { "event_step": 200, "allocated_vram_mb": 21232.0, "reserved_vram_mb": 23688.0, "fragmentation_ratio": 1.12, "avg_allocation_latency_us": 209.78 },
+    { "event_step": 400, "allocated_vram_mb": 38672.1, "reserved_vram_mb": 40120.0, "fragmentation_ratio": 1.04, "avg_allocation_latency_us": 160.80 },
+    { "event_step": 600, "allocated_vram_mb": 54064.1, "reserved_vram_mb": 55138.0, "fragmentation_ratio": 1.02, "avg_allocation_latency_us": 186.62 }
+  ]
+}
