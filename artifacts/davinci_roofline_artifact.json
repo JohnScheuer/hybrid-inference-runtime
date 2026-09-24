@@ -1,0 +1,14 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (32 AI Cores)",
+  "peak_cube_tflops": 380.0,
+  "measured_hbm_gbs": 1189.25,
+  "ridge_point_flop_per_byte": 319.53,
+  "roofline_curve": [
+    { "matrix_dim": 512, "arithmetic_intensity_flop_byte": 170.67, "attained_tflops": 9.14, "regime": "Memory-Bound" },
+    { "matrix_dim": 1024, "arithmetic_intensity_flop_byte": 341.33, "attained_tflops": 86.46, "regime": "Compute-Bound" },
+    { "matrix_dim": 2048, "arithmetic_intensity_flop_byte": 682.67, "attained_tflops": 252.95, "regime": "Compute-Bound" },
+    { "matrix_dim": 4096, "arithmetic_intensity_flop_byte": 1365.33, "attained_tflops": 315.33, "regime": "Compute-Bound (83.0% Ceiling)" },
+    { "matrix_dim": 8192, "arithmetic_intensity_flop_byte": 2730.67, "attained_tflops": 296.41, "regime": "Compute-Bound" }
+  ]
+}

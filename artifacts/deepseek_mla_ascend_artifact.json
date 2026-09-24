@@ -1,0 +1,19 @@
+{
+  "device": "Huawei Ascend 910B2 (64GB HBM2e)",
+  "architecture": "DaVinci V300 / CANN 8.6",
+  "study": "DeepSeek Multi-Head Latent Attention vs Multi-Head Attention",
+  "parameters": {
+    "layers": 32,
+    "hidden_dim": 4096,
+    "d_c_latent": 512,
+    "d_r_rope": 64,
+    "batch_size": 4
+  },
+  "benchmarks": [
+    { "context_length": 1024, "mha_kv_cache_mb": 2048.0, "mla_kv_cache_mb": 144.0, "vram_reduction_pct": 93.0, "mla_decode_tpot_ms": 1.709 },
+    { "context_length": 4096, "mha_kv_cache_mb": 8192.0, "mla_kv_cache_mb": 576.0, "vram_reduction_pct": 93.0, "mla_decode_tpot_ms": 1.736 },
+    { "context_length": 8192, "mha_kv_cache_mb": 16384.0, "mla_kv_cache_mb": 1152.0, "vram_reduction_pct": 93.0, "mla_decode_tpot_ms": 1.644 },
+    { "context_length": 16384, "mha_kv_cache_mb": 32768.0, "mla_kv_cache_mb": 2304.0, "vram_reduction_pct": 93.0, "mla_decode_tpot_ms": 1.630 },
+    { "context_length": 32768, "mha_kv_cache_mb": 65536.0, "mla_kv_cache_mb": 4608.0, "vram_reduction_pct": 93.0, "mla_decode_tpot_ms": 1.952 }
+  ]
+}
