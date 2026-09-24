@@ -1,0 +1,12 @@
+{
+  "device": "Huawei Ascend 910B2 (64GB HBM2e)",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "context_length": 8192,
+  "layers": 32,
+  "benchmarks": [
+    { "architecture": "MHA (32 KV Heads)", "kv_heads": 32, "kv_cache_mb": 16384.0, "kv_bandwidth_reduction_pct": 0.0, "decode_step_ms": 7.071, "throughput_tok_s": 565.7 },
+    { "architecture": "GQA-8 (4 KV Heads)", "kv_heads": 4, "kv_cache_mb": 2048.0, "kv_bandwidth_reduction_pct": 87.5, "decode_step_ms": 13.582, "throughput_tok_s": 294.5 },
+    { "architecture": "GQA-4 (8 KV Heads)", "kv_heads": 8, "kv_cache_mb": 4096.0, "kv_bandwidth_reduction_pct": 75.0, "decode_step_ms": 14.923, "throughput_tok_s": 268.0 },
+    { "architecture": "MQA (1 KV Head)", "kv_heads": 1, "kv_cache_mb": 512.0, "kv_bandwidth_reduction_pct": 96.9, "decode_step_ms": 11.992, "throughput_tok_s": 333.6 }
+  ]
+}

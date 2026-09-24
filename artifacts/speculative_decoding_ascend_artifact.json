@@ -1,0 +1,13 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "Speculative Decoding Parallel Target Verification on Cube Unit",
+  "assumed_acceptance_rate_alpha": 0.75,
+  "benchmarks": [
+    { "gamma_speculative_tokens": 1, "parallel_verification_ms": 1.155, "sequential_baseline_ms": 1.155, "expected_tokens_accepted": 1.0, "effective_speedup_factor": 1.0 },
+    { "gamma_speculative_tokens": 2, "parallel_verification_ms": 1.158, "sequential_baseline_ms": 2.311, "expected_tokens_accepted": 1.75, "effective_speedup_factor": 1.75 },
+    { "gamma_speculative_tokens": 4, "parallel_verification_ms": 1.167, "sequential_baseline_ms": 4.621, "expected_tokens_accepted": 2.73, "effective_speedup_factor": 2.71 },
+    { "gamma_speculative_tokens": 6, "parallel_verification_ms": 1.186, "sequential_baseline_ms": 6.932, "expected_tokens_accepted": 3.29, "effective_speedup_factor": 3.2 },
+    { "gamma_speculative_tokens": 8, "parallel_verification_ms": 1.194, "sequential_baseline_ms": 9.242, "expected_tokens_accepted": 3.6, "effective_speedup_factor": 3.48 }
+  ]
+}
