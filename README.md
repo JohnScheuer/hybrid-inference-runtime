@@ -4,13 +4,15 @@
 ![Node-0](https://img.shields.io/badge/Node--0-NVIDIA_RTX_5060-76B900)
 ![Node-1](https://img.shields.io/badge/Node--1-Huawei_Ascend_910B2-red)
 ![Artifacts](https://img.shields.io/badge/Artifacts-32_Empirical_JSONs-blue)
-![License](https://img.shields.io/badge/License-MIT-purple)
+![License](https://img.shields.io/badge/License-Proprietary_/_Enterprise-purple)
 
-A high-performance, disaggregated Prefill-Decode (PD) inference runtime and microarchitectural characterization suite. The system partitions serving workloads across physical NVIDIA Blackwell (SM120) for compute-heavy prompt prefill GEMMs and physical Huawei Ascend 910B2 (CANN 8.6 / DaVinci V300) for memory-bound token decode pipelines.
+A high-performance, disaggregated Prefill-Decode (PD) inference runtime architecture designed for heterogeneous sovereign AI clusters. The system partitions serving workloads across physical **NVIDIA Blackwell (SM120)** for compute-heavy prompt prefill GEMMs and physical **Huawei Ascend 910B2 (CANN 8.6 / DaVinci V300)** for memory-bound token decode pipelines.
 
 ---
 
 ## Architecture Overview
+
+This repository represents the high-level architecture and telemetry harness of the Heterogeneous Serving Engine. The core production runtime—including custom Ascend C (C++ VLIW) compute kernels, tensor parallelism sharding, and on-premises HCCL multi-NPU orchestration—is maintained in a private repository for enterprise deployment.
 
 ```text
                           [ USER INFERENCE REQUEST ]
@@ -42,14 +44,14 @@ A high-performance, disaggregated Prefill-Decode (PD) inference runtime and micr
 
 ## Live Physical Hardware Verification (Intercontinental Serving)
 
-The serving pipeline was verified end-to-end between Node 0 (Curitiba, Brazil / WSL2) and Node 1 (Peng Cheng CloudBrain 3, China) over a live HTTP/2 encapsulated tunnel.
+The serving pipeline was verified end-to-end between **Node 0 (Curitiba, Brazil / WSL2)** and **Node 1 (Peng Cheng CloudBrain 3, China)** over a live HTTP/2 encapsulated tunnel.
 
 ### Dual-Silicon Telemetry Summary
-- Node 0 (NVIDIA RTX 5060 Blackwell CC 12.0):
+- **Node 0 (NVIDIA RTX 5060 Blackwell CC 12.0):**
   - Memory Bandwidth: 314.18 GB/s (Sustained GDDR7 bus saturation)
   - Steady-State TTFT: 35.43 ms (b=4, s=512, d=4096)
   - KV Cache Generated: 32.00 MB (33554432 bytes in FP16)
-- Node 1 (Huawei Ascend 910B2 64GB HBM2e):
+- **Node 1 (Huawei Ascend 910B2 64GB HBM2e):**
   - Memory Capacity: 62420 MB HBM2e (npu-smi 25.2.1)
   - HBM Ingestion Latency: 33.04 ms to 74.18 ms (Direct HBM2e tensor ingestion)
   - Steady-State TPOT: 0.65 ms / token across a full 32-layer forward pass
@@ -59,7 +61,7 @@ The serving pipeline was verified end-to-end between Node 0 (Curitiba, Brazil / 
 
 ## Comprehensive DaVinci Microarchitectural Empirical Study
 
-The repository contains 32 raw JSON telemetry artifacts and 39 high-resolution empirical figures characterizing the physical execution boundaries of Huawei's Ascend 910B2 silicon.
+This repository contains 32 raw JSON telemetry artifacts and 39 high-resolution empirical figures characterizing the physical execution boundaries of Huawei's Ascend 910B2 silicon.
 
 ### 1. Ascend 910B2 vs. NVIDIA H100: Root Cause of the Hardware Gap
 A comparative roofline analysis proving that the ~60% throughput delta between Ascend 910B2 and NVIDIA H100 SXM5 is primarily dictated by fabrication process and packaging (SMIC 7nm DUV vs. TSMC 4N EUV, and 4-stack HBM2e at 1.19 TB/s vs. HBM3 at 3.35 TB/s), while the DaVinci Cube Unit achieves 83.5% physical silicon efficiency (317.16 TFLOPS out of 380 TFLOPS theoretical peak).
@@ -124,77 +126,39 @@ A comparative roofline analysis proving that the ~60% throughput delta between A
 
 ---
 
-## Telemetry Artifacts
-Each request produces a structured JSON artifact stored under `artifacts/` containing:
-```json
-{
-  "schema_version": "1.0.0",
-  "execution_mode": "LIVE_PHYSICAL_INTERCONTINENTAL",
-  "topology": {
-    "node_0_prefill": {
-      "device": "NVIDIA GeForce RTX 5060",
-      "architecture": "Blackwell (Compute Capability 12.0)",
-      "driver": "615.78.02 / CUDA 13.4",
-      "measured_ttft_ms": 35.43,
-      "kv_cache_bytes": 33554432
-    },
-    "node_1_decode": {
-      "device": "Huawei Ascend 910B2",
-      "architecture": "DaVinci V300 (CANN 8.6)",
-      "memory_capacity": "62420 MB HBM2e",
-      "driver": "npu-smi 25.2.1",
-      "measured_tpot_ms": 0.65,
-      "tokens_generated": 16
-    }
-  },
-  "workload": "32-Layer Transformer (b=4, s=512, d=4096)",
-  "status": "VALIDATED_ON_PHYSICAL_SILICON"
-}
-```
-
----
-
-## Repository Structure
+## Repository Structure (Harness & Telemetry Showcase)
 
 ```text
 hybrid-inference-runtime/
 ├── src/
-│   ├── live_heterogeneous_orchestrator.py # Live intercontinental WAN driver
-│   ├── orchestrator.py                    # Multi-node PD disaggregation engine
-│   ├── cuda_engine.py                     # Local NVIDIA Blackwell Prefill Worker
-│   ├── ascend_client.py                   # CANN Socket / gRPC client
-│   └── telemetry.py                       # vLLM-compatible artifact collector
-├── server_ascend/
-│   └── acl_decode_server.py               # Ascend 910B2 CANN Decode Server
-├── benchmarks/
-│   ├── blackwell_gddr7_profile.py         # Local SM120 GDDR7 profiling
-│   └── ...                                # DaVinci microbenchmarks
+│   ├── __init__.py
+│   ├── orchestrator.py                 # High-level architecture orchestrator
+│   ├── live_heterogeneous_orchestrator.py # Reference WAN socket bridge
+│   └── telemetry.py                    # Schema-compliant artifact collector
 ├── artifacts/
-│   ├── figures/                           # 39 High-resolution empirical plots
-│   └── *.json                             # 32 Physical execution telemetry JSONs
+│   ├── figures/                        # 39 High-resolution empirical plots
+│   └── *.json                          # 32 Physical execution telemetry JSONs
 ├── LICENSE
 └── README.md
 ```
 
 ---
 
-## Quickstart
+## Enterprise Deployment & Licensing
 
-### 1. Run Local NVIDIA Blackwell Profiling
-```bash
-python3 benchmarks/blackwell_gddr7_profile.py
-```
+The production-ready runtime is distributed as a proprietary, closed-source system. To license the high-throughput heterogeneous serving engine or contract on-site deployment, contact the author:
 
-### 2. Launch Heterogeneous Intercontinental Pipeline
-```bash
-# On Remote Huawei Ascend Node (CANN environment)
-python3 ascend_live_service.py
+- **Author:** João Felipe de Souza (Senior ML Systems Engineer)
+- **WeChat ID:** JohnScheuer7
+- **Email:** johnfelipe13@gmail.com
+- **GitHub:** [JohnScheuer](https://github.com/JohnScheuer)
 
-# On Local NVIDIA Workstation
-python3 run_demo_video.py
-```
+### Core Enterprise Offerings:
+1. **Highly-Optimized Ascend C Kernels:** Custom C++ VLIW operators compiled directly for DaVinci V300 Unified Buffer (UB) locality, bypassing HBM latency for SwiGLU, RMSNorm, and Rotary Positions.
+2. **HCCL Multi-NPU Tensor Parallelism:** Production-grade weight sharding (TP=2/4/8) optimized for the Ascend HBM interposer and intra-chip ring reduction topologies.
+3. **Dynamic Memory Swapping & Recompute Scheduling:** Intelligent continuous batching engine tailored to the latency crossover point between PCIe host swap-in and local prefill recomputation.
 
 ---
 
 ## License
-MIT License. Authored by João Felipe de Souza (Senior ML Systems Engineer).
+The high-level architecture harness is licensed under the MIT License. The production compute kernels and deployment orchestration are proprietary.
