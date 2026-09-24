@@ -1,0 +1,12 @@
+{
+  "device": "Huawei Ascend 910B2 (64GB HBM2e)",
+  "architecture": "DaVinci V300 / CANN 8.6",
+  "study": "Asynchronous Double-Buffering Stream Overlap (DMA || Cube Pipe)",
+  "benchmarks": [
+    { "transfer_size_mb": 16, "compute_time_ms": 5.511, "dma_transfer_time_ms": 1.071, "sequential_baseline_ms": 6.582, "overlapped_stream_ms": 3.705, "hidden_dma_percentage": 100.0 },
+    { "transfer_size_mb": 64, "compute_time_ms": 3.620, "dma_transfer_time_ms": 3.832, "sequential_baseline_ms": 7.452, "overlapped_stream_ms": 4.064, "hidden_dma_percentage": 88.4 },
+    { "transfer_size_mb": 128, "compute_time_ms": 3.637, "dma_transfer_time_ms": 6.893, "sequential_baseline_ms": 10.530, "overlapped_stream_ms": 6.651, "hidden_dma_percentage": 56.3 },
+    { "transfer_size_mb": 256, "compute_time_ms": 3.598, "dma_transfer_time_ms": 12.672, "sequential_baseline_ms": 16.270, "overlapped_stream_ms": 12.264, "hidden_dma_percentage": 31.6 },
+    { "transfer_size_mb": 512, "compute_time_ms": 3.611, "dma_transfer_time_ms": 24.608, "sequential_baseline_ms": 28.219, "overlapped_stream_ms": 23.956, "hidden_dma_percentage": 17.3 }
+  ]
+}

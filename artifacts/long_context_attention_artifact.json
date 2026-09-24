@@ -1,0 +1,13 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "Long-Context Attention Quadratic Complexity & OOM Memory Wall",
+  "hbm_capacity_gib": 60.96,
+  "benchmarks": [
+    { "sequence_length": 1024, "score_matrix_mb": 64.0, "prefill_attention_ms": 0.10, "attained_tflops": 90.04, "status": "COMPLETED" },
+    { "sequence_length": 4096, "score_matrix_mb": 1024.0, "prefill_attention_ms": 2.44, "attained_tflops": 56.29, "status": "COMPLETED" },
+    { "sequence_length": 8192, "score_matrix_mb": 4096.0, "prefill_attention_ms": 10.24, "attained_tflops": 53.71, "status": "COMPLETED" },
+    { "sequence_length": 16384, "score_matrix_mb": 16384.0, "prefill_attention_ms": 42.86, "attained_tflops": 51.31, "status": "COMPLETED" },
+    { "sequence_length": 32768, "score_matrix_mb": 65536.0, "prefill_attention_ms": null, "attained_tflops": null, "status": "OUT_OF_MEMORY_CLIFF", "oom_allocation_requested_gib": 64.0 }
+  ]
+}
