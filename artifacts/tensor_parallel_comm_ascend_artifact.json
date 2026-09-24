@@ -1,0 +1,13 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "Tensor Parallelism AllReduce Bus Ingestion & Latency Profile",
+  "benchmarks": [
+    { "message_size_mb": 1, "num_elements_millions": 0.52, "reduction_latency_ms": 0.013, "effective_bus_bandwidth_gbs": 147.56 },
+    { "message_size_mb": 4, "num_elements_millions": 2.10, "reduction_latency_ms": 0.013, "effective_bus_bandwidth_gbs": 593.99 },
+    { "message_size_mb": 16, "num_elements_millions": 8.39, "reduction_latency_ms": 0.013, "effective_bus_bandwidth_gbs": 2347.33 },
+    { "message_size_mb": 64, "num_elements_millions": 33.55, "reduction_latency_ms": 0.035, "effective_bus_bandwidth_gbs": 3560.34 },
+    { "message_size_mb": 128, "num_elements_millions": 67.11, "reduction_latency_ms": 0.351, "effective_bus_bandwidth_gbs": 713.08 },
+    { "message_size_mb": 256, "num_elements_millions": 134.22, "reduction_latency_ms": 0.693, "effective_bus_bandwidth_gbs": 721.07 }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "Fused Chunked Cross-Entropy Memory Bounding vs Standard PyTorch CE",
+  "total_tokens": 2048,
+  "chunk_size": 256,
+  "benchmarks": [
+    { "vocab_name": "Standard (32k / Llama-2)", "vocab_size": 32000, "standard_vram_mb": 250.0, "chunked_vram_mb": 31.2, "standard_ce_latency_ms": 2.68, "chunked_ce_latency_ms": 4.23, "memory_reduction_pct": 87.5 },
+    { "vocab_name": "Extended (64k / Mistral)", "vocab_size": 64000, "standard_vram_mb": 500.0, "chunked_vram_mb": 62.5, "standard_ce_latency_ms": 5.29, "chunked_ce_latency_ms": 8.07, "memory_reduction_pct": 87.5 },
+    { "vocab_name": "Large (128k / Llama-3)", "vocab_size": 128256, "standard_vram_mb": 1002.0, "chunked_vram_mb": 125.2, "standard_ce_latency_ms": 12.23, "chunked_ce_latency_ms": 32.15, "memory_reduction_pct": 87.5 },
+    { "vocab_name": "Ultra-Large (152k / Qwen2.5)", "vocab_size": 152064, "standard_vram_mb": 1188.0, "chunked_vram_mb": 148.5, "standard_ce_latency_ms": 14.92, "chunked_ce_latency_ms": 39.38, "memory_reduction_pct": 87.5 }
+  ]
+}
