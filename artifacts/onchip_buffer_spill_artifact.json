@@ -1,0 +1,24 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "On-Chip L0/L1 Buffer Reverse Engineering via Latency Cliff Detection",
+  "cube_buffer_probe": [
+    { "k_dimension": 256, "total_onchip_kb": 16.0, "latency_us": 20.56, "latency_per_flop_ns": 0.157, "regime": "L0 On-Chip" },
+    { "k_dimension": 512, "total_onchip_kb": 32.0, "latency_us": 20.36, "latency_per_flop_ns": 0.078, "regime": "L0 On-Chip" },
+    { "k_dimension": 1024, "total_onchip_kb": 64.0, "latency_us": 21.85, "latency_per_flop_ns": 0.042, "regime": "L0 On-Chip" },
+    { "k_dimension": 2048, "total_onchip_kb": 128.0, "latency_us": 21.11, "latency_per_flop_ns": 0.020, "regime": "L1 Buffered" },
+    { "k_dimension": 4096, "total_onchip_kb": 256.0, "latency_us": 20.74, "latency_per_flop_ns": 0.010, "regime": "L1 Buffered" },
+    { "k_dimension": 8192, "total_onchip_kb": 512.0, "latency_us": 21.48, "latency_per_flop_ns": 0.005, "regime": "L1 Buffered" },
+    { "k_dimension": 12288, "total_onchip_kb": 768.0, "latency_us": 21.24, "latency_per_flop_ns": 0.003, "regime": "L1 Buffered" },
+    { "k_dimension": 16384, "total_onchip_kb": 1024.0, "latency_us": 28.10, "latency_per_flop_ns": 0.003, "regime": "L1 Spill to HBM (+32.3%)" }
+  ],
+  "unified_buffer_probe": [
+    { "probe_size_kb": 32, "silu_latency_us": 18.58, "regime": "UB On-Chip" },
+    { "probe_size_kb": 64, "silu_latency_us": 19.30, "regime": "UB On-Chip" },
+    { "probe_size_kb": 128, "silu_latency_us": 18.44, "regime": "UB On-Chip" },
+    { "probe_size_kb": 256, "silu_latency_us": 18.94, "regime": "UB On-Chip" },
+    { "probe_size_kb": 512, "silu_latency_us": 19.50, "regime": "UB Tiled" },
+    { "probe_size_kb": 1024, "silu_latency_us": 18.73, "regime": "UB Tiled" },
+    { "probe_size_kb": 2048, "silu_latency_us": 18.39, "regime": "UB Tiled" }
+  ]
+}

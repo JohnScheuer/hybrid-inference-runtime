@@ -1,0 +1,24 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "total_ai_cores": 32,
+  "study": "Multi-Core Scaling & HBM Shared Bus Contention",
+  "core_scaling": [
+    { "batch_size": 16, "num_fractals": 1, "estimated_active_cores": 1, "latency_ms": 0.041, "throughput_tok_s": 391475.4, "core_efficiency_pct": 100.0 },
+    { "batch_size": 32, "num_fractals": 2, "estimated_active_cores": 2, "latency_ms": 0.039, "throughput_tok_s": 825539.6, "core_efficiency_pct": 100.0 },
+    { "batch_size": 64, "num_fractals": 4, "estimated_active_cores": 4, "latency_ms": 0.041, "throughput_tok_s": 1578259.5, "core_efficiency_pct": 100.0 },
+    { "batch_size": 128, "num_fractals": 8, "estimated_active_cores": 8, "latency_ms": 0.048, "throughput_tok_s": 2691548.0, "core_efficiency_pct": 85.9 },
+    { "batch_size": 256, "num_fractals": 16, "estimated_active_cores": 16, "latency_ms": 0.090, "throughput_tok_s": 2846768.5, "core_efficiency_pct": 45.4 },
+    { "batch_size": 512, "num_fractals": 32, "estimated_active_cores": 32, "latency_ms": 0.164, "throughput_tok_s": 3125585.7, "core_efficiency_pct": 25.0 },
+    { "batch_size": 1024, "num_fractals": 64, "estimated_active_cores": 32, "latency_ms": 0.320, "throughput_tok_s": 3195019.5, "core_efficiency_pct": 25.5 },
+    { "batch_size": 2048, "num_fractals": 128, "estimated_active_cores": 32, "latency_ms": 0.633, "throughput_tok_s": 3234851.0, "core_efficiency_pct": 25.8 }
+  ],
+  "hbm_contention": [
+    { "concurrent_streams": 1, "per_stream_bandwidth_gbs": 266.52, "aggregate_bandwidth_gbs": 266.52, "hbm_bus_saturation_pct": 22.4 },
+    { "concurrent_streams": 2, "per_stream_bandwidth_gbs": 187.89, "aggregate_bandwidth_gbs": 375.78, "hbm_bus_saturation_pct": 31.6 },
+    { "concurrent_streams": 4, "per_stream_bandwidth_gbs": 113.73, "aggregate_bandwidth_gbs": 454.93, "hbm_bus_saturation_pct": 38.3 },
+    { "concurrent_streams": 8, "per_stream_bandwidth_gbs": 64.06, "aggregate_bandwidth_gbs": 512.46, "hbm_bus_saturation_pct": 43.1 },
+    { "concurrent_streams": 16, "per_stream_bandwidth_gbs": 34.36, "aggregate_bandwidth_gbs": 549.81, "hbm_bus_saturation_pct": 46.2 },
+    { "concurrent_streams": 32, "per_stream_bandwidth_gbs": 17.77, "aggregate_bandwidth_gbs": 568.67, "hbm_bus_saturation_pct": 47.8 }
+  ]
+}
