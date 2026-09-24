@@ -1,0 +1,13 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "Multi-Stream Hardware Task Queue Concurrency & AI Core Contention",
+  "workload": "GEMM [512, 4096] x [4096, 4096] FP16",
+  "benchmarks": [
+    { "concurrent_streams": 1, "concurrent_makespan_ms": 0.213, "tasks_per_sec": 4691.6, "aggregated_tflops": 80.6, "scaling_efficiency_pct": 100.0 },
+    { "concurrent_streams": 2, "concurrent_makespan_ms": 0.298, "tasks_per_sec": 6703.8, "aggregated_tflops": 115.17, "scaling_efficiency_pct": 142.9 },
+    { "concurrent_streams": 4, "concurrent_makespan_ms": 0.492, "tasks_per_sec": 8123.5, "aggregated_tflops": 139.56, "scaling_efficiency_pct": 173.1 },
+    { "concurrent_streams": 8, "concurrent_makespan_ms": 0.983, "tasks_per_sec": 8139.4, "aggregated_tflops": 139.83, "scaling_efficiency_pct": 173.5 },
+    { "concurrent_streams": 16, "concurrent_makespan_ms": 1.763, "tasks_per_sec": 9076.9, "aggregated_tflops": 155.94, "scaling_efficiency_pct": 193.5 }
+  ]
+}
