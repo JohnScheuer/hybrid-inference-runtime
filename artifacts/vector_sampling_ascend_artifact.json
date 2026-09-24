@@ -1,0 +1,12 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "Vector Unit Logit Sampling & Nucleus Top-P Scalability",
+  "parameters": { "batch_size": 4, "top_k": 50, "top_p": 0.9, "temperature": 0.7 },
+  "benchmarks": [
+    { "vocab_name": "Standard (32k / Llama-2)", "vocab_size": 32000, "softmax_scaling_ms": 0.064, "topk_sorting_ms": 0.032, "full_nucleus_topp_ms": 0.750, "sampling_throughput_samples_sec": 5333.3 },
+    { "vocab_name": "Extended (64k / Mistral)", "vocab_size": 64000, "softmax_scaling_ms": 0.066, "topk_sorting_ms": 0.035, "full_nucleus_topp_ms": 0.788, "sampling_throughput_samples_sec": 5079.0 },
+    { "vocab_name": "Large (128k / Llama-3)", "vocab_size": 128256, "softmax_scaling_ms": 0.066, "topk_sorting_ms": 0.035, "full_nucleus_topp_ms": 0.832, "sampling_throughput_samples_sec": 4810.1 },
+    { "vocab_name": "Ultra-Large (152k / Qwen2.5)", "vocab_size": 152064, "softmax_scaling_ms": 0.084, "topk_sorting_ms": 0.047, "full_nucleus_topp_ms": 0.919, "sampling_throughput_samples_sec": 4351.0 }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "device": "Huawei Ascend 910B2",
+  "architecture": "DaVinci V300 (CANN 8.6)",
+  "study": "Sub-Byte 4-Bit (INT4/FP4) Quantization Acceleration vs INT8 and FP16",
+  "benchmarks": [
+    { "workload": "Attn QKV (4k->12k)", "fp16_latency_ms": 0.041, "int8_latency_ms": 0.020, "int4_latency_ms": 0.010, "int4_speedup_factor": 4.0, "vram_saved_mb": 72.0 },
+    { "workload": "Attn Out (4k->4k)", "fp16_latency_ms": 0.024, "int8_latency_ms": 0.012, "int4_latency_ms": 0.006, "int4_speedup_factor": 4.0, "vram_saved_mb": 24.0 },
+    { "workload": "MLP Gate/Up (4k->11k)", "fp16_latency_ms": 0.037, "int8_latency_ms": 0.019, "int4_latency_ms": 0.009, "int4_speedup_factor": 4.0, "vram_saved_mb": 64.5 },
+    { "workload": "MLP Down (11k->4k)", "fp16_latency_ms": 0.047, "int8_latency_ms": 0.024, "int4_latency_ms": 0.012, "int4_speedup_factor": 4.0, "vram_saved_mb": 64.5 },
+    { "workload": "MoE Expert (4k->2k)", "fp16_latency_ms": 0.024, "int8_latency_ms": 0.012, "int4_latency_ms": 0.006, "int4_speedup_factor": 4.0, "vram_saved_mb": 12.0 },
+    { "workload": "Massive GEMM (8k->8k)", "fp16_latency_ms": 0.071, "int8_latency_ms": 0.035, "int4_latency_ms": 0.018, "int4_speedup_factor": 4.0, "vram_saved_mb": 96.0 }
+  ]
+}
